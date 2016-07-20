@@ -49,6 +49,23 @@ public class Handi {
             String action = req.params(":action");
             Map<String,Object> data = new HashMap<String,Object>();
             data.put("action", action);
+            if (action.equals("next")) {
+                if (patients.size() - 1 > activeToken) {
+                    activeToken++;
+                    data.put("token", activeToken);
+                    data.put("patient", patients.get(activeToken));
+                } else {
+                    data.put("patient", new Object());
+                    data.put("token", activeToken);
+                }
+            } else if (action.equals("current")) {
+                data.put("token", activeToken);
+                if (patients.size() == 0) {
+                    data.put("patient", new Object());
+                } else {
+                    data.put("patient", patients.get(activeToken));
+                }
+            }
             res.header("Content-Type", "application/json");
             return data;
         }, new JsonTransformer());
