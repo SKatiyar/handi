@@ -1,8 +1,9 @@
-import java.util.*;
 import com.google.gson.Gson;
-import spark.ResponseTransformer;
 
+import spark.ResponseTransformer;
 import static spark.Spark.*;
+
+import java.util.*;
 
 public class Handi {
     private static class Patient {
