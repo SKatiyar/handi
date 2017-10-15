@@ -1,5 +1,7 @@
 # handi
 
+Sample REST Api written in java
+
 ## Running Locally
 
 Make sure you have Java installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
